@@ -1,0 +1,601 @@
+{
+  "paper": {
+    "title_en": "Beyond the Sequence: Evaluating Traffic Features for Encrypted LLM Topic Inference",
+    "venue": "CISC-W 2026",
+    "method": "TRACE (Traffic-descriptor Classification Ensemble)",
+    "local_trainer_token": "FEAT"
+  },
+  "class_order": [
+    "travel",
+    "cooking",
+    "climate",
+    "sports",
+    "Negative"
+  ],
+  "seeds": [
+    42,
+    0,
+    1,
+    123,
+    7
+  ],
+  "predictions": [
+    {
+      "paper_name": "TRACE",
+      "trainer_token": "feat",
+      "seed": 42,
+      "run_dir": "nothink_feat_s42",
+      "n": 121,
+      "correct": 68,
+      "accuracy": 0.5619834710743802,
+      "prediction_sha256": "efffcfaa45d885d14146c672095e6d12f6f3382c62e8b407e198ee3cedafce1c",
+      "saved_model_dimensions": [
+        202,
+        202,
+        202
+      ]
+    },
+    {
+      "paper_name": "TRACE",
+      "trainer_token": "feat",
+      "seed": 0,
+      "run_dir": "nothink_feat_s0",
+      "n": 121,
+      "correct": 80,
+      "accuracy": 0.6611570247933884,
+      "prediction_sha256": "4965276ba26955c74b108416d905632a3d90cb8af6b97c043e53fce2aa3bd8fc",
+      "saved_model_dimensions": [
+        202,
+        202,
+        202
+      ]
+    },
+    {
+      "paper_name": "TRACE",
+      "trainer_token": "feat",
+      "seed": 1,
+      "run_dir": "nothink_feat_s1",
+      "n": 121,
+      "correct": 79,
+      "accuracy": 0.6528925619834711,
+      "prediction_sha256": "96e95445b20ecf0d3d4df996bae6df82d69927d5dceed845d65a7048b87da8b4",
+      "saved_model_dimensions": [
+        202,
+        202,
+        202
+      ]
+    },
+    {
+      "paper_name": "TRACE",
+      "trainer_token": "feat",
+      "seed": 123,
+      "run_dir": "nothink_feat_s123",
+      "n": 121,
+      "correct": 68,
+      "accuracy": 0.5619834710743802,
+      "prediction_sha256": "f964d0ad6b8c90a56dfd1e31a0e9498df4f99f98ae28a27d393139a6831e5fe1",
+      "saved_model_dimensions": [
+        202,
+        202,
+        202
+      ]
+    },
+    {
+      "paper_name": "TRACE",
+      "trainer_token": "feat",
+      "seed": 7,
+      "run_dir": "nothink_feat_s7",
+      "n": 121,
+      "correct": 71,
+      "accuracy": 0.5867768595041323,
+      "prediction_sha256": "50265ff5f7f044c0e201d300dee6e4a462fa24c9b3cc4631f490476183ce84e5",
+      "saved_model_dimensions": [
+        202,
+        202,
+        202
+      ]
+    },
+    {
+      "paper_name": "Bi-LSTM",
+      "trainer_token": "lstm",
+      "seed": 42,
+      "run_dir": "nothink_lstm",
+      "n": 121,
+      "correct": 63,
+      "accuracy": 0.5206611570247934,
+      "prediction_sha256": "20ff0f80e71ed663a44add4ab638beae6a36b2c07de5101c7f87b5fc98e90eaa",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "Bi-LSTM",
+      "trainer_token": "lstm",
+      "seed": 0,
+      "run_dir": "nothink_lstm_s0",
+      "n": 121,
+      "correct": 47,
+      "accuracy": 0.3884297520661157,
+      "prediction_sha256": "30af042bfa2fc3952b63013bf08b4680825f3bc322b9316e5c768a824e93f4f8",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "Bi-LSTM",
+      "trainer_token": "lstm",
+      "seed": 1,
+      "run_dir": "nothink_lstm_s1",
+      "n": 121,
+      "correct": 50,
+      "accuracy": 0.4132231404958678,
+      "prediction_sha256": "9b3e99c9d9ecdb15f816e3245fa7d0166885c1d8d95dbf4869d1793ae1309415",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "Bi-LSTM",
+      "trainer_token": "lstm",
+      "seed": 123,
+      "run_dir": "nothink_lstm_s123",
+      "n": 121,
+      "correct": 56,
+      "accuracy": 0.4628099173553719,
+      "prediction_sha256": "e825b3466b90f6bae8b151188c3305c95bfd756188108cc3a258e79b56218f3d",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "Bi-LSTM",
+      "trainer_token": "lstm",
+      "seed": 7,
+      "run_dir": "nothink_lstm_s7",
+      "n": 121,
+      "correct": 52,
+      "accuracy": 0.4297520661157025,
+      "prediction_sha256": "7858e64c01c0f60ae7c553fa38654f78abd3e3b88fca2123cb5739b81329b904",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "Seq. LGBM",
+      "trainer_token": "lgbm",
+      "seed": 42,
+      "run_dir": "nothink_lgbm",
+      "n": 121,
+      "correct": 45,
+      "accuracy": 0.371900826446281,
+      "prediction_sha256": "3277ad97e90486d2c9bb68eeecd788d259dc13896bcf17e20a79469ce9c19a91",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "Seq. LGBM",
+      "trainer_token": "lgbm",
+      "seed": 0,
+      "run_dir": "nothink_lgbm_s0",
+      "n": 121,
+      "correct": 50,
+      "accuracy": 0.4132231404958678,
+      "prediction_sha256": "e0ef8a0256fd7e610f75891aa5057c73da9d187b2e5c27dbd7e7f4b280cd96db",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "Seq. LGBM",
+      "trainer_token": "lgbm",
+      "seed": 1,
+      "run_dir": "nothink_lgbm_s1",
+      "n": 121,
+      "correct": 54,
+      "accuracy": 0.4462809917355372,
+      "prediction_sha256": "f3a4464f605b5e84126dda971f3fa3afbf6c9176f90f62a999f318ecbc61bd24",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "Seq. LGBM",
+      "trainer_token": "lgbm",
+      "seed": 123,
+      "run_dir": "nothink_lgbm_s123",
+      "n": 121,
+      "correct": 61,
+      "accuracy": 0.5041322314049587,
+      "prediction_sha256": "ffb7eb0aa86809e976f1753d4efa450a8ece1008ea2428e2ea93b29653de4f78",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "Seq. LGBM",
+      "trainer_token": "lgbm",
+      "seed": 7,
+      "run_dir": "nothink_lgbm_s7",
+      "n": 121,
+      "correct": 57,
+      "accuracy": 0.47107438016528924,
+      "prediction_sha256": "8b4db0042a6b00863b8dc235d5905a720076a8121e863495e2a256c7e6c39dd7",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "CNN",
+      "trainer_token": "cnn",
+      "seed": 42,
+      "run_dir": "nothink_cnn",
+      "n": 121,
+      "correct": 44,
+      "accuracy": 0.36363636363636365,
+      "prediction_sha256": "d2d618e6f85a60494df3583c8eb277007129aeeaa695b8d8f7c2ec29dfb6b5dc",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "CNN",
+      "trainer_token": "cnn",
+      "seed": 0,
+      "run_dir": "nothink_cnn_s0",
+      "n": 121,
+      "correct": 41,
+      "accuracy": 0.33884297520661155,
+      "prediction_sha256": "79d39eaba8c4547729094eb9f638c98e75368f1cfc8e580700ab164a56f3d6a0",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "CNN",
+      "trainer_token": "cnn",
+      "seed": 1,
+      "run_dir": "nothink_cnn_s1",
+      "n": 121,
+      "correct": 49,
+      "accuracy": 0.4049586776859504,
+      "prediction_sha256": "8d3c623701db744714d03f05d7b7b9b6fe7f23bcc30c3d17ab7ef5ede5685612",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "CNN",
+      "trainer_token": "cnn",
+      "seed": 123,
+      "run_dir": "nothink_cnn_s123",
+      "n": 121,
+      "correct": 47,
+      "accuracy": 0.3884297520661157,
+      "prediction_sha256": "11ae887a32a5e5f610ddcfa85a57ea8a0923500e8efb243b08b1bd7e8d8eae46",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "CNN",
+      "trainer_token": "cnn",
+      "seed": 7,
+      "run_dir": "nothink_cnn_s7",
+      "n": 121,
+      "correct": 43,
+      "accuracy": 0.35537190082644626,
+      "prediction_sha256": "2a01ac335a88b9b127f6b9b52cbb64f4a716823105fd41b9b5521b0810e798c7",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "DistilBERT",
+      "trainer_token": "bert",
+      "seed": 42,
+      "run_dir": "nothink_bert",
+      "n": 121,
+      "correct": 24,
+      "accuracy": 0.19834710743801653,
+      "prediction_sha256": "bc819af0495c8cde4ea88f5b9e04d266c72ae5a58444e3e3f859fd8d008b7ea3",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "DistilBERT",
+      "trainer_token": "bert",
+      "seed": 0,
+      "run_dir": "nothink_bert_s0",
+      "n": 121,
+      "correct": 37,
+      "accuracy": 0.30578512396694213,
+      "prediction_sha256": "9b32e7930fae8ddc47da95af4ee3135a94f5cf567218bef8170883715b959298",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "DistilBERT",
+      "trainer_token": "bert",
+      "seed": 1,
+      "run_dir": "nothink_bert_s1",
+      "n": 121,
+      "correct": 36,
+      "accuracy": 0.2975206611570248,
+      "prediction_sha256": "b5b0868f79f85e33919aa19629bc910823d250bdfca7170659a6c7618b88ccc1",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "DistilBERT",
+      "trainer_token": "bert",
+      "seed": 123,
+      "run_dir": "nothink_bert_s123",
+      "n": 121,
+      "correct": 35,
+      "accuracy": 0.2892561983471074,
+      "prediction_sha256": "e52a1c589b14318740dd594a94edc61479de1580fb36db3676f7e4e56e056aa3",
+      "saved_model_dimensions": null
+    },
+    {
+      "paper_name": "DistilBERT",
+      "trainer_token": "bert",
+      "seed": 7,
+      "run_dir": "nothink_bert_s7",
+      "n": 121,
+      "correct": 24,
+      "accuracy": 0.19834710743801653,
+      "prediction_sha256": "9690db3b2c4f2555d53879ce1b65bd0dbb075cc741cdaddbff74702b1c7f1836",
+      "saved_model_dimensions": null
+    }
+  ],
+  "split_counts": [
+    {
+      "seed": 42,
+      "matches_saved_test_prompts": true,
+      "prompt_disjoint": true,
+      "counts": {
+        "train": {
+          "prompts": [
+            29,
+            29,
+            28,
+            29,
+            88
+          ],
+          "traces": [
+            87,
+            87,
+            84,
+            87,
+            88
+          ]
+        },
+        "validation": {
+          "prompts": [
+            3,
+            3,
+            4,
+            3,
+            10
+          ],
+          "traces": [
+            9,
+            9,
+            12,
+            9,
+            10
+          ]
+        },
+        "test": {
+          "prompts": [
+            8,
+            8,
+            8,
+            8,
+            25
+          ],
+          "traces": [
+            24,
+            24,
+            24,
+            24,
+            25
+          ]
+        }
+      }
+    },
+    {
+      "seed": 0,
+      "matches_saved_test_prompts": true,
+      "prompt_disjoint": true,
+      "counts": {
+        "train": {
+          "prompts": [
+            28,
+            29,
+            29,
+            29,
+            88
+          ],
+          "traces": [
+            84,
+            87,
+            87,
+            87,
+            88
+          ]
+        },
+        "validation": {
+          "prompts": [
+            4,
+            3,
+            3,
+            3,
+            10
+          ],
+          "traces": [
+            12,
+            9,
+            9,
+            9,
+            10
+          ]
+        },
+        "test": {
+          "prompts": [
+            8,
+            8,
+            8,
+            8,
+            25
+          ],
+          "traces": [
+            24,
+            24,
+            24,
+            24,
+            25
+          ]
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "matches_saved_test_prompts": true,
+      "prompt_disjoint": true,
+      "counts": {
+        "train": {
+          "prompts": [
+            29,
+            28,
+            29,
+            29,
+            88
+          ],
+          "traces": [
+            87,
+            84,
+            87,
+            87,
+            88
+          ]
+        },
+        "validation": {
+          "prompts": [
+            3,
+            4,
+            3,
+            3,
+            10
+          ],
+          "traces": [
+            9,
+            12,
+            9,
+            9,
+            10
+          ]
+        },
+        "test": {
+          "prompts": [
+            8,
+            8,
+            8,
+            8,
+            25
+          ],
+          "traces": [
+            24,
+            24,
+            24,
+            24,
+            25
+          ]
+        }
+      }
+    },
+    {
+      "seed": 123,
+      "matches_saved_test_prompts": true,
+      "prompt_disjoint": true,
+      "counts": {
+        "train": {
+          "prompts": [
+            29,
+            29,
+            28,
+            29,
+            88
+          ],
+          "traces": [
+            87,
+            87,
+            84,
+            87,
+            88
+          ]
+        },
+        "validation": {
+          "prompts": [
+            3,
+            3,
+            4,
+            3,
+            10
+          ],
+          "traces": [
+            9,
+            9,
+            12,
+            9,
+            10
+          ]
+        },
+        "test": {
+          "prompts": [
+            8,
+            8,
+            8,
+            8,
+            25
+          ],
+          "traces": [
+            24,
+            24,
+            24,
+            24,
+            25
+          ]
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "matches_saved_test_prompts": true,
+      "prompt_disjoint": true,
+      "counts": {
+        "train": {
+          "prompts": [
+            29,
+            29,
+            29,
+            28,
+            88
+          ],
+          "traces": [
+            87,
+            87,
+            87,
+            84,
+            88
+          ]
+        },
+        "validation": {
+          "prompts": [
+            3,
+            3,
+            3,
+            4,
+            10
+          ],
+          "traces": [
+            9,
+            9,
+            9,
+            12,
+            10
+          ]
+        },
+        "test": {
+          "prompts": [
+            8,
+            8,
+            8,
+            8,
+            25
+          ],
+          "traces": [
+            24,
+            24,
+            24,
+            24,
+            25
+          ]
+        }
+      }
+    }
+  ],
+  "notes": [
+    "This file records hashes and counts only. It does not contain prompts, traces, or model weights.",
+    "LSTM-BERT exists in the historical audit but is omitted from the current manuscript.",
+    "Seed 42 sequence-model directories omit the _s42 suffix (nothink_lstm, nothink_lgbm, nothink_cnn, nothink_bert)."
+  ]
+}
