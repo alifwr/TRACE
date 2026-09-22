@@ -1,0 +1,28 @@
+{
+  "config": "configs/train_nothink.yaml",
+  "chatbot": "Vllm",
+  "modeltype": "FEAT",
+  "prompts": "prompts/topics/prompts.json",
+  "seed": 1,
+  "batchsize": 32,
+  "epochs": 80,
+  "patience": 12,
+  "kernelwidth": 3,
+  "learningrate": 0.0001,
+  "testsize": 20,
+  "validsize": 10,
+  "downsample": 1.0,
+  "input_folder": "data/nothink",
+  "csv_output_only": false,
+  "out_dir": "/home/pc/whisperleak/whisper_leak/results/runs/nothink_feat_s1",
+  "run_name": "nothink_feat_s1",
+  "num_classes": 5,
+  "class_names": [
+    "travel_planning",
+    "cooking_recipes",
+    "climate_science",
+    "sports_analysis",
+    "Negative"
+  ],
+  "model_path": "/home/pc/whisperleak/whisper_leak/results/runs/nothink_feat_s1/models/feat_multiclass_classifier.pth"
+}

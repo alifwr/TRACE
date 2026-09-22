@@ -1,0 +1,8 @@
+{
+  "class_name": "FeatureGBDTClassifier",
+  "args": {
+    "n_gbdt": 3,
+    "seed": 7
+  },
+  "num_classes": 5
+}

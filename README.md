@@ -1,19 +1,26 @@
-# CISC-W 2026 TRACE — private reproducibility support
+# CISC-W 2026 TRACE — reproducibility support
 
-Support package for verifying the numerical claims in:
+Support package for:
 
 **Beyond the Sequence: Evaluating Traffic Features for Encrypted LLM Topic Inference**
 
 (CISC-W 2026 draft. TRACE = Traffic-descriptor Classification Ensemble.)
 
-This repository is **not** a public artifact release. The manuscript states that no public release is committed for prompts, feature matrices, evaluation code, or serving configurations. This package therefore contains only:
+This repository contains the study prompts, the captured traffic used in the draft, the trained TRACE models, the evaluation protocol, published table values, prediction-file hashes, and a verifier that recomputes Tables 1–2 from retained `test_results.csv` files.
 
-- the evaluation protocol as written in the draft
-- published table values
-- SHA-256 hashes of the retained prediction files
-- a verifier that recomputes accuracy, macro-F1, and the pooled TRACE confusion matrix from those files
+## Released artifacts
 
-It does **not** contain prompts, packet captures, feature matrices, trained models, tokenizer weights, serving flags, or the paper source. The CISC draft was not edited when this repository was created.
+| Path | Contents |
+|---|---|
+| `prompts/prompts.json` | 283 study prompts: 40 × travel / cooking / climate / sports (`repeat: 3`) and 123 Negative (`repeat: 1`). Labels follow list membership. |
+| `data/nothink/*.pcap` | 603 packet captures (`<prompt-hash>_<rep>_Vllm_t07.pcap`). |
+| `data/nothink/Vllm_t07.json` | Per-session metadata (prompt text, ports, timestamps) aligned with those pcaps. |
+| `models/nothink_feat_s{42,0,1,123,7}/` | Trained TRACE ensemble for each reported seed: three LightGBM bags (`feat_multiclass_classifier_gbdt{0,1,2}.joblib`), `feat_multiclass_classifier_feat.json`, and `run_config.json`. |
+| `expected/` | Published-table CSVs and SHA-256 hashes of the original prediction files. |
+| `scripts/verify_from_predictions.py` | Recomputes accuracy, macro-F1, and the pooled TRACE confusion matrix. |
+| `PROTOCOL.md` | Evaluation protocol as written in the draft. |
+
+Sequence-baseline checkpoints (Bi-LSTM, Sequence LightGBM, CNN, DistilBERT) are not included: DistilBERT and Bi-LSTM weights are hundreds of megabytes to over a gigabyte per method.
 
 ## Name mapping
 
@@ -25,20 +32,17 @@ It does **not** contain prompts, packet captures, feature matrices, trained mode
 | CNN | `CNN` | `nothink_cnn` / `nothink_cnn_s*` |
 | DistilBERT | `BERT` | `nothink_bert` / `nothink_bert_s*` |
 
-LSTM–BERT exists among historical runs and is omitted from the current draft.
-
 ## Verify published tables
 
-Point `--runs` at the retained `results/runs` directory (default: this machine’s Whisper Leak tree):
+The verifier reads saved prediction CSVs (not the models or pcaps). Point `--runs` at a `results/runs` tree that still has those files:
 
 ```bash
-python3 scripts/verify_from_predictions.py
 python3 scripts/verify_from_predictions.py --runs /path/to/whisper_leak/results/runs
 ```
 
 The script exits nonzero if a prediction file is missing, its SHA-256 differs from `expected/prediction_hashes.json`, or recomputed metrics differ from `expected/table1_per_seed.csv` / `expected/table2_pooled_confusion.csv`.
 
-This is a **saved-prediction audit**. It does not retrain models or recapture traffic.
+This is a **saved-prediction audit**. Loading the released TRACE models or recapturing traffic is a separate step.
 
 ## What this does not establish
 
@@ -46,6 +50,5 @@ This is a **saved-prediction audit**. It does not retrain models or recapture tr
 - Generalization beyond the 603-trace closed-world corpus
 - Exact Qwen checkpoint revision, vLLM release, or run-pinned tokenizer source
 - A formula-level inventory of every 202-d coordinate
-- Public availability of the underlying data
 
 See `PROTOCOL.md` and `ARTIFACT_MAP.md`.

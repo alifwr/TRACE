@@ -1,16 +1,28 @@
 # Artifact map
 
-Prediction files live in the local experiment tree, not in this repository.
+## Released in this repository
 
-Default root:
+| Path | Role |
+|---|---|
+| `prompts/prompts.json` | 283 study prompts (160 topical + 123 Negative) |
+| `data/nothink/*.pcap` | 603 TLS captures (`hash_rep_Vllm_t07.pcap`) |
+| `data/nothink/Vllm_t07.json` | Session index: prompt text, ports, timestamps |
+| `models/nothink_feat_s{42,0,1,123,7}/feat_multiclass_classifier_gbdt{0,1,2}.joblib` | TRACE LightGBM bags |
+| `models/nothink_feat_s*/feat_multiclass_classifier_feat.json` | TRACE feature/ensemble metadata |
+| `models/nothink_feat_s*/run_config.json` | Trainer settings for that seed |
+| `expected/table1_per_seed.csv` | Per-seed accuracy and macro-F1 (five methods) |
+| `expected/table2_pooled_confusion.csv` | TRACE confusion pooled over 605 test appearances |
+| `expected/prediction_hashes.json` | SHA-256 of the original `test_results.csv` files |
+
+TRACE boosters record 202 inputs (`max_feature_idx=201`). Duplicate `checkpoint_*` copies from the trainer were not shipped.
+
+## Prediction files (not shipped)
+
+Table verification still needs the original `test_results.csv` files. They live in the local experiment tree (override with `--runs`):
 
 ```
 /home/pc/whisperleak/whisper_leak/results/runs
 ```
-
-Override with `--runs`.
-
-## Manuscript methods
 
 | Paper name | Seed | Directory | `test_results.csv` SHA-256 (prefix) |
 |---|---:|---|---|
@@ -28,15 +40,6 @@ Override with `--runs`.
 | DistilBERT | 42 | `nothink_bert` | `bc819af0495c8cde…` |
 | DistilBERT | 0–7 | `nothink_bert_s*` | see JSON |
 
-Full hashes are in `expected/prediction_hashes.json`. TRACE boosters record 202 inputs (`max_feature_idx=201`).
-
-## Published tables in this repo
-
-| File | Role |
-|---|---|
-| `expected/table1_per_seed.csv` | Per-seed accuracy and macro-F1 (five methods) |
-| `expected/table2_pooled_confusion.csv` | TRACE confusion pooled over 605 test appearances |
-
 ## Not stored here
 
-Prompts (`prompts/topics/prompts.json`), captures (`data/nothink`), selected checkpoints, DistilBERT weights, vLLM flags, and `cisc-prism/main.tex`.
+Sequence-baseline checkpoints (Bi-LSTM, Sequence LightGBM, CNN, DistilBERT), DistilBERT tokenizer weights, vLLM serving flags, and `cisc-prism/main.tex`.

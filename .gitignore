@@ -3,14 +3,7 @@ __pycache__/
 *.pyc
 .env
 .env.*
-*.pt
-*.pth
-*.joblib
-*.pcap
-*.pcapng
-data/
-prompts/
-models/
+.DS_Store
+*.zip
 *.ttf
 *.otf
-.DS_Store
